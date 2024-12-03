@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: pink;
+}
+
+#world {
+    display: block;
+}
+
+#ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff85c2;
+}
