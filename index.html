@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Mundo 3D - LULYLAND</title>
+  <style>
+    /* Establecer el fondo con una imagen */
+    body {
+      margin: 0; /* Eliminar márgenes */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: url('https://media.discordapp.net/attachments/993140063078723704/1314226420683243530/OIG4_1.jpg?ex=6753003b&is=6751aebb&hm=8c08ee5eb83559e873f4584b38203f2272414fcc6e7dc010a1e765fdd5a53d2e&=&format=webp&width=671&height=671'); /* Cambia esta URL por la imagen deseada */
+      background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+      background-position: top; /* Asegura que la imagen comience desde la parte superior */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      color: white; /* Cambia el texto a blanco para mejor visibilidad */
+      min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .game-board {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      background-color: rgba(255, 0, 179, 0.8); /* Botones con fondo blanco semitransparente */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgba(255, 255, 255, 1); /* Cambia a blanco sólido al pasar el mouse */
+    }
+    .header-text {
+      margin-top: 20px;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente negro */
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Texto arriba de los juegos -->
+  <div class="header-text">
+    💖💖¡¡Bienvenido Lulyt@!!💖💖 Aquí podrás encontrar todos los minijuegos que te ofrecemos en este discord.
+  </div>
+
+  <!-- Juegos -->
+  <div class="game-board">
+    <!-- Botón para el juego de Puzzle -->
+    <button id="jugarPuzzleButton">Jugar al Puzzle</button>
+    <!-- Botón para el juego de Sopa de Letras -->
+    <button id="jugarSopaLetrasButton">Jugar a Sopa de Letras</button>
+    <!-- Botón para el juego de Laberinto -->
+    <button id="jugarLaberintoButton">Jugar al Laberinto</button>
+    <!-- Botón para el juego de Crucigrama -->
+    <button id="jugarCrucigramaButton">Jugar al Crucigrama</button>
+    <!-- Botón para el juego Une los puntos -->
+    <button id="jugarUnePuntosButton">Une los puntos</button>
+  </div>
+
+  <script>
+    // Redirigir al juego de Puzzle
+    document.getElementById("jugarPuzzleButton").addEventListener("click", function() {
+      window.location.href = "https://www.ohmydots.com/play/svtp50dd/gato-like";  // Enlace al juego de Puzzle
+    });
+
+    // Redirigir al juego de Sopa de Letras
+    document.getElementById("jugarSopaLetrasButton").addEventListener("click", function() {
+      window.location.href = "https://www.ohmydots.com/play/673dv3y1/sopa-minijuegos-";  // Enlace al juego de Sopa de Letras
+    });
+
+    // Redirigir al juego de Laberinto
+    document.getElementById("jugarLaberintoButton").addEventListener("click", function() {
+      window.location.href = "https://www.ohmydots.com/play/gxgerbi0";  // Enlace al juego de Laberinto
+    });
+
+    // Redirigir al juego de Crucigrama
+    document.getElementById("jugarCrucigramaButton").addEventListener("click", function() {
+      window.location.href = "https://www.ohmydots.com/play/63k7zfdi/crucigrama";  // Enlace al juego de Crucigrama
+    });
+
+    // Redirigir al juego Une los puntos
+    document.getElementById("jugarUnePuntosButton").addEventListener("click", function() {
+      window.location.href = "https://www.ohmydots.com/play/qoj09i3l/unir";  // Enlace al juego Une los puntos
+    });
+  </script>
+</body>
+</html>
