@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Mundo 3D - LULYLAND</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: url('https://media.discordapp.net/attachments/1314232292276699206/1317527203990470716/OIG4.png?ex=675f0253&is=675db0d3&hm=8d072adf44869cd104b6b1cb6f2636070283326e8fb902be20ff3703e4ff97de&=&format=webp&quality=lossless');
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .game-board {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      background-color: rgba(255, 0, 179, 0.8);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    .header-text {
+      margin-top: 20px;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-text">
+    💖💖¡¡Bienvenido Lulyt@!!💖💖 Aquí podrás encontrar todos los minijuegos que te ofrecemos en este discord.
+  </div>
+
+  <div class="game-board">
+    <button id="jugarPuzzleButton">Jugar al Puzzle</button>
+    <button id="jugarSopaLetrasButton">Jugar a Sopa de Letras</button>
+    <button id="jugarLaberintoButton">Jugar al Laberinto</button>
+    <button id="jugarCrucigramaButton">Jugar al Crucigrama</button>
+    <button id="jugarUnePuntosButton">Une los puntos</button>
+    <button id="jugarUnoButton">UNO</button>
+  </div>
+
+  <script>
+    // Redirigir al juego de Puzzle con un enlace aleatorio
+    document.getElementById("jugarPuzzleButton").addEventListener("click", function() {
+      const enlaces = [
+        "https://www.ohmydots.com/play/svtp50dd/gato-like", 
+        "https://www.ohmydots.com/play/0qn7dlcl",
+        "https://www.ohmydots.com/play/uu965dmn",
+        "https://www.ohmydots.com/play/lvh4lnbc",
+        "https://www.ohmydots.com/play/pix1927t",
+        "https://www.ohmydots.com/play/fqf91w4x",
+        "https://www.ohmydots.com/play/duuju8x0",
+        "https://www.ohmydots.com/play/i5stxtas",
+        "https://www.ohmydots.com/play/9gx50c18",
+        "https://www.ohmydots.com/play/5zsblf13",
+        "https://www.ohmydots.com/play/4msw899i/luly" // Añadido el nuevo enlace de puzzle
+      ];
+      const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+      window.location.href = enlaceSeleccionado;
+    });
+
+    // Redirigir al juego de Sopa de Letras con un enlace aleatorio
+    document.getElementById("jugarSopaLetrasButton").addEventListener("click", function() {
+      const enlaces = [
+        "https://www.ohmydots.com/play/673dv3y1/sopa-minijuegos-",
+        "https://www.ohmydots.com/play/pdq1l7bl/navidad",
+        "https://www.ohmydots.com/play/c8y7naxk/familia",
+        "https://www.ohmydots.com/play/x1x25brn/mezcla",
+        "https://www.ohmydots.com/play/l1stlwcd/adopt-me",
+        "https://www.ohmydots.com/play/zsxongbz/adopt-me",
+        "https://www.ohmydots.com/play/1gdedhps/discord-randoom"
+      ];
+      const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+      window.location.href = enlaceSeleccionado;
+    });
+
+    // Redirigir al juego de Laberinto con un enlace aleatorio
+    document.getElementById("jugarLaberintoButton").addEventListener("click", function() {
+      const enlaces = [
+        "https://www.ohmydots.com/play/gxgerbi0",
+        "https://www.ohmydots.com/play/jiteof35",
+        "https://www.ohmydots.com/play/hu9a0thd",
+        "https://www.ohmydots.com/play/l9zx8kup",
+        "https://www.ohmydots.com/play/uamecqzx",
+        "https://www.ohmydots.com/play/o3omloql",
+        "https://www.ohmydots.com/play/ttdt1dg8",
+        "https://www.ohmydots.com/play/3fmadtus",
+        "https://www.ohmydots.com/play/cp7bxsbx",
+        "https://www.ohmydots.com/play/z2p45r7z"
+      ];
+      const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+      window.location.href = enlaceSeleccionado;
+    });
+
+    // Mostrar mensaje Próximamente para el juego de Crucigrama
+    document.getElementById("jugarCrucigramaButton").addEventListener("click", function() {
+      alert("👀PRÓXIMAMENTE👀");
+    });
+
+    // Redirigir al juego Une los puntos con un enlace aleatorio
+    document.getElementById("jugarUnePuntosButton").addEventListener("click", function() {
+      const enlaces = [
+        "https://www.ohmydots.com/play/qoj09i3l/unir",
+        "https://www.ohmydots.com/play/qmc0pm91",
+        "https://www.ohmydots.com/play/vtlbla28",
+        "https://www.ohmydots.com/play/ck7f0wc8",
+        "https://www.ohmydots.com/play/8ojsq0dj",
+        "https://www.ohmydots.com/play/6d6et8ij",
+        "https://www.ohmydots.com/play/klj05n8x",
+        "https://www.ohmydots.com/play/n0g0bxeo",
+        "https://www.ohmydots.com/play/1ik2c3lj",
+        "https://www.ohmydots.com/play/3j1dknn7"
+      ];
+      const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+      window.location.href = enlaceSeleccionado;
+    });
+
+    // Mostrar mensaje Próximamente para el juego UNO
+    document.getElementById("jugarUnoButton").addEventListener("click", function() {
+      alert("👀PRÓXIMAMENTE👀");
+    });
+  </script>
+</body>
+</html>
