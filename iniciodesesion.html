@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia Sesión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #7289da, #5865F2);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .discord-logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none; /* Quita el borde azul de foco */
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #5865F2, #4854D8);
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            outline: none; /* Quita el borde azul de foco */
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.7);
+        }
+
+        .link {
+            margin-top: 15px;
+        }
+
+        a {
+            color: #b9bbbe;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contenido oculto inicialmente */
+        .welcome-message {
+            display: none;
+            font-size: 1.2rem;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-card" id="login-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord Logo" class="discord-logo">
+        <h1>¡Bienvenido!</h1>
+        <form id="login-form">
+            <label for="username">Nombre de usuario de Discord</label>
+            <input type="text" id="username" placeholder="Nombre de usuario de Discord" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Tu contraseña" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <div class="link">
+            <a href="#" onclick="showRegisterForm()">¿No tienes cuenta? Regístrate</a>
+        </div>
+
+        <form id="register-form" style="display:none;">
+            <h1>Registro</h1>
+            <label for="birthdate">Fecha de nacimiento</label>
+            <input type="date" id="birthdate" required>
+
+            <label for="new-username">Nombre de usuario de Discord</label>
+            <input type="text" id="new-username" placeholder="Nombre de usuario de Discord" required>
+
+            <label for="new-password">Contraseña</label>
+            <input type="password" id="new-password" placeholder="Tu contraseña" required>
+
+            <label for="repeat-password">Repite tu contraseña</label>
+            <input type="password" id="repeat-password" placeholder="Repite tu contraseña" required>
+
+            <button type="submit">Registrarse</button>
+        </form>
+
+    </div>
+
+    <!-- Este contenido se ocultará hasta que el formulario de inicio de sesión sea completado -->
+    <div class="welcome-message" id="welcome-message">
+        <h2><!DOCTYPE html>
+          <html lang="es">
+           <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Minijuegos Lulyt@s</title>
+              <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+              <style>
+                body {
+                  margin: 0;
+                  font-family: 'Poppins', sans-serif;
+                  background-color: #0e0b16;
+                  color: #fff;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  padding: 0 20px;
+                  text-align: center;
+                }
+          
+                .background {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-image: url('https://media.discordapp.net/attachments/1314232292276699206/1317527203990470716/OIG4.png?ex=6772c8d3&is=67717753&hm=3d15a20aae6f67f48d1f87361f1ddbd35d3fcebccb73b2206e297ae7a380d2e3&=&format=webp&quality=lossless');
+                  background-size: cover;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  opacity: 0.1;
+                  z-index: -1;
+                }
+          
+                .header-text {
+                  font-size: 36px;
+                  font-weight: 600;
+                  color: #ff76c3;
+                  margin-bottom: 30px;
+                  text-transform: uppercase;
+                  text-shadow: 2px 2px 8px rgba(255, 0, 179, 0.8);
+                  line-height: 1.4;
+                }
+          
+                .game-board {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  gap: 20px;
+                }
+          
+                button {
+                  background: linear-gradient(135deg, #ff76c3, #8f00ff);
+                  color: white;
+                  border: none;
+                  padding: 15px 30px;
+                  font-size: 18px;
+                  font-weight: 600;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  width: 250px;
+                }
+          
+                button:hover {
+                  background: linear-gradient(135deg, #8f00ff, #ff76c3);
+                  transform: scale(1.05);
+                }
+          
+                .footer {
+                  position: fixed;
+                  bottom: 20px;
+                  left: 20px;
+                  display: flex;
+                  align-items: center;
+                  background: rgba(0, 0, 0, 0.7);
+                  padding: 10px;
+                  border-radius: 10px;
+                  box-shadow: 0 0 15px rgba(255, 136, 255, 0.8);
+                }
+          
+                .footer img {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  margin-right: 10px;
+                }
+          
+                .footer a {
+                  text-decoration: none;
+                  color: white;
+                  font-size: 18px;
+                  font-weight: 600;
+                  transition: color 0.3s ease;
+                }
+          
+                .footer a:hover {
+                  color: #ff76c3;
+                }
+          
+                .created-by {
+                  position: absolute;
+                  top: 20px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  color: rgb(248, 169, 228);
+                  font-size: 18px;
+                  font-weight: bold;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  z-index: 9999;
+                }
+          
+                .created-by .check-tick {
+                  width: 20px;
+                  height: 20px;
+                  background-color: #32cd32;
+                  border-radius: 50%;
+                  position: relative;
+                  margin-left: 10px;
+                  box-shadow: 0 0 10px #32cd32, 0 0 20px #32cd32, 0 0 30px #32cd32;
+                }
+          
+                .created-by .check-tick::before {
+                  content: "";
+                  position: absolute;
+                  top: 3px;
+                  left: 6px;
+                  width: 4px;
+                  height: 8px;
+                  border: solid #fff;
+                  border-width: 0 3px 3px 0;
+                  transform: rotate(45deg);
+                }
+          
+                /* 4 in a row game styles */
+                #fourInRowGame {
+                  display: none;
+                  background: linear-gradient(135deg, #ff76c3, #8f00ff);
+                  padding: 20px;
+                  border-radius: 15px;
+                  box-shadow: 0 0 30px rgba(255, 118, 195, 0.3);
+                  max-width: 600px;
+                  width: 100%;
+                }
+          
+                .game-grid {
+                  display: grid;
+                  grid-template-columns: repeat(7, 1fr);
+                  gap: 8px;
+                  margin: 20px 0;
+                  background: rgba(255, 255, 255, 0.1);
+                  padding: 15px;
+                  border-radius: 10px;
+                }
+          
+                .cell {
+                  width: 100%;
+                  aspect-ratio: 1;
+                  background: white;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                  border: none;
+                }
+          
+                .cell.player1 {
+                  background: #ff76c3;
+                }
+          
+                .cell.player2 {
+                  background: #8f00ff;
+                }
+          
+                .game-info {
+                  color: white;
+                  font-size: 1.5rem;
+                  margin: 15px 0;
+                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                }
+          
+                .game-buttons {
+                  display: flex;
+                  gap: 10px;
+                  justify-content: center;
+                  margin-top: 20px;
+                }
+          
+                .game-button {
+                  background: white;
+                  color: #ff76c3;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 8px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                }
+          
+                .game-button:hover {
+                  transform: scale(1.05);
+                  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+                }
+          
+                @media (max-width: 768px) {
+                  .game-board {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                  }
+          
+                  button {
+                    width: 100%;
+                    max-width: 300px;
+                    margin: 0 auto;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="background"></div>
+              <div class="created-by" id="createdByMessage">
+                Hecho por SrtaLuly
+                <div class="check-tick"></div>
+              </div>
+          
+              <div class="header-text" id="welcomeText">
+                💖 ¡¡Bienvenido Lulyt@!! 💖 <br> 
+                ¡Aquí podrás disfrutar de nuestros minijuegos en Discord!
+              </div>
+          
+              <div class="game-board" id="mainMenu">
+                <button id="jugarPuzzleButton">PUZZLE</button>
+                <button id="jugarSopaLetrasButton">SOPA DE LETRAS</button>
+                <button id="jugarLaberintoButton">LABERINTO</button>
+                <button id="jugarCrucigramaButton">CRUCIGRAMA</button>
+                <button id="jugarUnePuntosButton">UNIR LOS PUNTOS</button>
+                <button id="jugarCuatroEnRaya">4 EN RAYA</button>
+              </div>
+          
+              <div id="fourInRowGame">
+                <h2 class="game-info" id="gameStatus">¡Es tu turno Lulyt@! 🎮</h2>
+                <div class="game-grid" id="gameGrid"></div>
+                <div class="game-buttons">
+                  <button class="game-button" id="resetGame">Reiniciar</button>
+                  <button class="game-button" id="backToMenu">Volver</button>
+                </div>
+              </div>
+          
+              <div class="footer" id="mainFooter">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk42nOb7JO9BB8ytmm5_lhistGBGmXhsze9g&s" alt="Logo Familia Lulyt@">
+                <a href="https://discord.gg/lulyfamily" target="_blank">FAMILIA LULYTOS</a>
+              </div>
+          
+              <script>
+                // Game link event listeners
+                document.getElementById("jugarPuzzleButton").addEventListener("click", function() {
+                  const enlaces = [
+                    "https://www.ohmydots.com/play/svtp50dd/gato-like", 
+                    "https://www.ohmydots.com/play/0qn7dlcl",
+                    "https://www.ohmydots.com/play/uu965dmn",
+                    "https://www.ohmydots.com/play/lvh4lnbc",
+                    "https://www.ohmydots.com/play/pix1927t",
+                    "https://www.ohmydots.com/play/fqf91w4x",
+                    "https://www.ohmydots.com/play/duuju8x0",
+                    "https://www.ohmydots.com/play/i5stxtas",
+                    "https://www.ohmydots.com/play/9gx50c18",
+                    "https://www.ohmydots.com/play/5zsblf13",
+                    "https://www.ohmydots.com/play/4msw899i/luly",
+                    "https://www.ohmydots.com/play/06bzdyow/gatitobotia",
+                    "https://www.ohmydots.com/play/4j4aj1d3/ban",
+                    "https://www.ohmydots.com/play/cthczykz/pistola",
+                    "https://www.ohmydots.com/play/r0k7rlc1/corazon",
+                    "https://www.ohmydots.com/play/5v1o1xn0/beso",
+                    "https://www.ohmydots.com/play/4y9uj1d5/comiendo",
+                    "https://www.ohmydots.com/play/k2gscsuf/llorando",
+                    "https://www.ohmydots.com/play/y1tbl3ok/gatitobot"
+                  ];
+                  const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+                  window.location.href = enlaceSeleccionado;
+                });
+          
+                document.getElementById("jugarSopaLetrasButton").addEventListener("click", function() {
+                  const enlaces = [
+                    "https://www.ohmydots.com/play/673dv3y1/sopa-minijuegos-",
+                    "https://www.ohmydots.com/play/pdq1l7bl/navidad",
+                    "https://www.ohmydots.com/play/c8y7naxk/familia",
+                    "https://www.ohmydots.com/play/x1x25brn/mezcla",
+                    "https://www.ohmydots.com/play/l1stlwcd/adopt-me",
+                    "https://www.ohmydots.com/play/zsxongbz/adopt-me",
+                    "https://www.ohmydots.com/play/1gdedhps/discord-randoom",
+                    "https://www.ohmydots.com/play/t0dbmij5/adopt-me-navidad-2024",
+                    "https://www.ohmydots.com/play/wnzgwwym/verano",
+                    "https://www.ohmydots.com/play/wnzgww5v/familia"
+                  ];
+                  const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+                  window.location.href = enlaceSeleccionado;
+                });
+          
+                document.getElementById("jugarLaberintoButton").addEventListener("click", function() {
+                  const enlaces = [
+                    "https://www.ohmydots.com/play/gxgerbi0",
+                    "https://www.ohmydots.com/play/jiteof35",
+                    "https://www.ohmydots.com/play/hu9a0thd",
+                    "https://www.ohmydots.com/play/l9zx8kup",
+                    "https://www.ohmydots.com/play/uamecqzx",
+                    "https://www.ohmydots.com/play/o3omloql",
+                    "https://www.ohmydots.com/play/ttdt1dg8",
+                    "https://www.ohmydots.com/play/3fmadtus",
+                    "https://www.ohmydots.com/play/cp7bxsbx",
+                    "https://www.ohmydots.com/play/z2p45r7z"
+                  ];
+                  const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+                  window.location.href = enlaceSeleccionado;
+                });
+          
+                document.getElementById("jugarCrucigramaButton").addEventListener("click", function() {
+                  const enlaces = [
+                    "https://www.ohmydots.com/play/ictm6et5/varios",
+                    "https://www.ohmydots.com/play/5dqxt9d5/adopt-me",
+                    "https://www.ohmydots.com/play/4dp3th4p/frutas"
+                  ];
+                  const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+                  window.location.href = enlaceSeleccionado;
+                });
+          
+                document.getElementById("jugarUnePuntosButton").addEventListener("click", function() {
+                  const enlaces = [
+                    "https://www.ohmydots.com/play/qoj09i3l/unir",
+                    "https://www.ohmydots.com/play/qmc0pm91",
+                    "https://www.ohmydots.com/play/vtlbla28",
+                    "https://www.ohmydots.com/play/ck7f0wc8",
+                    "https://www.ohmydots.com/play/8ojsq0dj",
+                    "https://www.ohmydots.com/play/6d6et8ij",
+                    "https://www.ohmydots.com/play/klj05n8x",
+                    "https://www.ohmydots.com/play/n0g0bxeo",
+                    "https://www.ohmydots.com/play/1ik2c3lj",
+                    "https://www.ohmydots.com/play/3j1dknn7"
+                  ];
+                  const enlaceSeleccionado = enlaces[Math.floor(Math.random() * enlaces.length)];
+                  window.location.href = enlaceSeleccionado;
+                });
+          
+                // Created by message fade out
+                setTimeout(function() {
+                  const message = document.getElementById('createdByMessage');
+                  message.style.transition = 'opacity 1s';
+                  message.style.opacity = 0;
+                  setTimeout(function() {
+                    message.style.display = 'none';
+                  }, 1000);
+                }, 2000);
+          
+                // 4 in a row game logic
+                const game = {
+                  currentPlayer: 1, // 1 for player, 2 for bot
+                  board: Array(6).fill().map(() => Array(7).fill(null)),
+                  gameActive: true,
+                  isThinking: false
+                };
+          
+                function createBoard() {
+                  const grid = document.getElementById('gameGrid');
+                  grid.innerHTML = '';
+                  for (let row = 0; row < 6; row++) {
+                    for (let col = 0; col < 7; col++) {
+                      const cell = document.createElement('button');
+                      cell.className = 'cell';
+                      cell.dataset.row = row;
+                      cell.dataset.col = col;
+                      cell.onclick = () => makeMove(col);
+                      grid.appendChild(cell);
+                    }
+                  }
+                }
+          
+                function getBotMove() {
+                  // Enhanced bot strategy:
+                  // 1. Look for winning move
+                  // 2. Block opponent's winning move
+                  // 3. Create opportunities for winning
+                  // 4. Prefer center columns
+                  // 5. Random valid move as fallback
+          
+                  const centerCols = [3, 2, 4, 1, 5, 0, 6];
+                  
+                  // Check for immediate win
+                  for (let col = 0; col < 7; col++) {
+                    let row = 5;
+                    while (row >= 0 && game.board[row][col] !== null) {
+                      row--;
+                    }
+                    if (row >= 0) {
+                      // Try move
+                      game.board[row][col] = 2;
+                      if (checkWin(row, col)) {
+                        game.board[row][col] = null;
+                        return col;
+                      }
+                      game.board[row][col] = null;
+                    }
+                  }
+          
+                  // Block opponent's winning move
+                  for (let col = 0; col < 7; col++) {
+                    let row = 5;
+                    while (row >= 0 && game.board[row][col] !== null) {
+                      row--;
+                    }
+                    if (row >= 0) {
+                      // Check if opponent would win here
+                      game.board[row][col] = 1;
+                      if (checkWin(row, col)) {
+                        game.board[row][col] = null;
+                        return col;
+                      }
+                      game.board[row][col] = null;
+                    }
+                  }
+          
+                  // Look for double threat opportunities
+                  for (let col of centerCols) {
+                    let row = 5;
+                    while (row >= 0 && game.board[row][col] !== null) {
+                      row--;
+                    }
+                    if (row >= 0) {
+                      // Try move and check if it creates multiple winning paths
+                      game.board[row][col] = 2;
+                      let threats = 0;
+                      // Check next possible moves
+                      for (let nextCol = 0; nextCol < 7; nextCol++) {
+                        let nextRow = 5;
+                        while (nextRow >= 0 && game.board[nextRow][nextCol] !== null) {
+                          nextRow--;
+                        }
+                        if (nextRow >= 0) {
+                          game.board[nextRow][nextCol] = 2;
+                          if (checkWin(nextRow, nextCol)) {
+                            threats++;
+                          }
+                          game.board[nextRow][nextCol] = null;
+                        }
+                      }
+                      game.board[row][col] = null;
+                      if (threats > 1) {
+                        return col;
+                      }
+                    }
+                  }
+          
+                  // Prefer center columns with potential
+                  for (let col of centerCols) {
+                    let row = 5;
+                    while (row >= 0 && game.board[row][col] !== null) {
+                      row--;
+                    }
+                    if (row >= 0 && row > 0) { // Ensure there's space above
+                      return col;
+                    }
+                  }
+          
+                  // Random valid move as fallback
+                  const validMoves = centerCols.filter(col => {
+                    let row = 5;
+                    while (row >= 0 && game.board[row][col] !== null) {
+                      row--;
+                    }
+                    return row >= 0;
+                  });
+          
+                  if (validMoves.length === 0) return null;
+                  return validMoves[Math.floor(Math.random() * validMoves.length)];
+                }
+          
+                async function botTurn() {
+                  if (!game.gameActive || game.currentPlayer !== 2) return;
+          
+                  game.isThinking = true;
+                  document.getElementById('gameStatus').textContent = 'Turno del Bot 🤖';
+          
+                  // Add a small delay to make it feel more natural
+                  await new Promise(resolve => setTimeout(resolve, 1000));
+          
+                  const col = getBotMove();
+                  if (col !== null) {
+                    makeMove(col);
+                  }
+          
+                  game.isThinking = false;
+                }
+          
+                function makeMove(col) {
+                  if (!game.gameActive || (game.currentPlayer === 2 && !game.isThinking)) return;
+          
+                  let row = 5;
+                  while (row >= 0 && game.board[row][col] !== null) {
+                    row--;
+                  }
+                  if (row < 0) return;
+          
+                  game.board[row][col] = game.currentPlayer;
+                  updateBoard();
+          
+                  if (checkWin(row, col)) {
+                    document.getElementById('gameStatus').textContent = 
+                      game.currentPlayer === 1 ? '¡Has ganado! 🎉' : '¡El Bot ha ganado! 🤖';
+                    game.gameActive = false;
+                    return;
+                  }
+          
+                  if (isBoardFull()) {
+                    document.getElementById('gameStatus').textContent = '¡Empate! 🤝';
+                    game.gameActive = false;
+                    return;
+                  }
+          
+                  game.currentPlayer = game.currentPlayer === 1 ? 2 : 1;
+          
+                  if (game.currentPlayer === 1) {
+                    document.getElementById('gameStatus').textContent = '¡Es tu turno Lulyt@! 🎮';
+                  } else {
+                    botTurn();
+                  }
+                }
+          
+                function updateBoard() {
+                  const cells = document.getElementsByClassName('cell');
+                  for (let row = 0; row < 6; row++) {
+                    for (let col = 0; col < 7; col++) {
+                      const index = row * 7 + col;
+                      cells[index].className = 'cell' + 
+                        (game.board[row][col] === 1 ? ' player1' : 
+                         game.board[row][col] === 2 ? ' player2' : '');
+                    }
+                  }
+                }
+          
+                function checkWin(row, col) {
+                  const directions = [
+                    [0, 1],  // horizontal
+                    [1, 0],  // vertical
+                    [1, 1],  // diagonal right
+                    [1, -1]  // diagonal left
+                  ];
+                  
+                  return directions.some(([dx, dy]) => {
+                    let count = 1;
+                    let r = row;
+                    let c = col;
+                    
+                    while (true) {
+                      r += dx;
+                      c += dy;
+                      if (r < 0 || r >= 6 || c < 0 || c >= 7 || 
+                          game.board[r][c] !== game.currentPlayer) break;
+                      count++;
+                    }
+                    
+                    r = row;
+                    c = col;
+                    while (true) {
+                      r -= dx;
+                      c -= dy;
+                      if (r < 0 || r >= 6 || c < 0 || c >= 7 || 
+                          game.board[r][c] !== game.currentPlayer) break;
+                      count++;
+                    }
+                    
+                    return count >= 4;
+                  });
+                }
+          
+                function isBoardFull() {
+                  return game.board.every(row => row.every(cell => cell !== null));
+                }
+          
+                function resetGame() {
+                  game.board = Array(6).fill().map(() => Array(7).fill(null));
+                  game.currentPlayer = 1;
+                  game.gameActive = true;
+                  game.isThinking = false;
+                  document.getElementById('gameStatus').textContent = '¡Es tu turno Lulyt@! 🎮';
+                  updateBoard();
+                }
+          
+                // 4 in a row game event listeners
+                document.getElementById('jugarCuatroEnRaya').addEventListener('click', () => {
+                  document.getElementById('mainMenu').style.display = 'none';
+                  document.getElementById('welcomeText').style.display = 'none';
+                  document.getElementById('mainFooter').style.display = 'none';
+                  document.getElementById('fourInRowGame').style.display = 'block';
+                  createBoard();
+                });
+          
+                document.getElementById('backToMenu').addEventListener('click', () => {
+                  document.getElementById('mainMenu').style.display = 'flex';
+                  document.getElementById('welcomeText').style.display = 'block';
+                  document.getElementById('mainFooter').style.display = 'flex';
+                  document.getElementById('fourInRowGame').style.display = 'none';
+                });
+          
+                document.getElementById('resetGame').addEventListener('click', resetGame);
+             </script>
+            </body>
+          </html></h2>
+    </div>
+
+    <script>
+        function showRegisterForm() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("register-form").style.display = "block";
+        }
+
+        document.getElementById("register-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert('Registro completado con éxito');
+        });
+
+        document.getElementById("login-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Muestra el mensaje de bienvenida y oculta el formulario de inicio de sesión
+            document.getElementById("login-card").style.display = "none"; // Ocultar el formulario de inicio de sesión
+            document.getElementById("welcome-message").style.display = "block"; // Mostrar el mensaje de bienvenida
+        });
+    </script>
+</body>
+</html>
